@@ -23,7 +23,7 @@ kind: Service
 metadata:
   name: auth-srv
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     app: auth
   ports:
