@@ -1,7 +1,7 @@
-apiVersion: extentions/v1beta1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-service
+  name: ingress-srv
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/use-regex: 'true'
@@ -10,7 +10,7 @@ spec:
     - host: riciti.dev
       http:
         paths:
-         - path: /api/users/?(*)
+         - path: /api/users/?(.*)
            backend:
              serviceName: auth-srv
              servicePort: 3000
